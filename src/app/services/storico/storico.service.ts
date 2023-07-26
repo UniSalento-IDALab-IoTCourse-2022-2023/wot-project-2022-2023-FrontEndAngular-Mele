@@ -14,7 +14,8 @@ export class StoricoService{
   listaAnomalie:Anomalies[] = []
   anomalia:Anomalies = {} as Anomalies;
 
-  baseUrl:string = "http://3.231.200.225:8080"
+  baseUrl:string = "http://3.231.200.225:8080";
+  //baseUrl:string = "http://192.168.92.72:8080"
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,8 +26,8 @@ export class StoricoService{
 
   constructor(private http:HttpClient) {
 
-    /*
-    //this.listaStorico = this.getRoutes(); //Metodo ufficiale
+
+    //Metodo ufficiale
     this.getRoutes().subscribe(
       data => {
         this.listaStorico = data;
@@ -36,10 +37,11 @@ export class StoricoService{
         console.log("Errore durante la richiesta:", error);
       }
     );
-    */
 
 
 
+
+    /*
 
     //--------------------MOCK 1-------------------------------
 
@@ -223,13 +225,14 @@ export class StoricoService{
 
     //------------------------------------------------------
 
+     */
 
   }
 
    test:boolean = true;
    updateDataset(){
 
-    /*
+
     //METODO UFFICIALE
     this.getRoutes().subscribe(
       data => {
@@ -239,8 +242,10 @@ export class StoricoService{
         console.log("Errore durante la richiesta:", error);
       }
     );
-    */
 
+
+
+  /*
 
     if(this.test){
       this.listaStorico = []
@@ -376,8 +381,8 @@ export class StoricoService{
       this.anomalia = {} as Anomalies
 
       this.anomalia.type = "humidity"
-      this.anomalia.time = []
-      this.anomalia.value =  []
+      this.anomalia.time = ["13:30","15:30"]
+      this.anomalia.value =  ["40","60"]
       this.anomalia.maxValue = 25;
       this.anomalia.minValue = 20;
       this.listaAnomalie.push(this.anomalia)
@@ -392,8 +397,8 @@ export class StoricoService{
       this.anomalia = {} as Anomalies
 
       this.anomalia.type = "co2"
-      this.anomalia.time = []
-      this.anomalia.value =  []
+      this.anomalia.time = ["500","600"]
+      this.anomalia.value =  ["12:30","13:30"]
       this.anomalia.maxValue = 400;
       this.anomalia.minValue = 200;
       this.listaAnomalie.push(this.anomalia)
@@ -577,8 +582,8 @@ export class StoricoService{
       this.anomalia = {} as Anomalies
 
       this.anomalia.type = "co2"
-      this.anomalia.time = ["10:40"]
-      this.anomalia.value =  ["500"]
+      this.anomalia.time = ["10:40","16:30","18:30"]
+      this.anomalia.value =  ["500","600","700"]
       this.anomalia.maxValue = 400;
       this.anomalia.minValue = 200;
       this.listaAnomalie.push(this.anomalia)
@@ -612,7 +617,12 @@ export class StoricoService{
 
       //------------------------------------------------------
       this.test = !this.test
+
+
     }
+
+   */
+
 
   }
 

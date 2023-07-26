@@ -9,8 +9,8 @@
         <br>
         <div class="list-group">
           <span *ngFor="let item of storicoServices.listaStorico">
-            <a (click)="navigateToRun(item.id)" class="list-group-item list-group-item-action" *ngIf="item.endClock != ''">Date: <b>{{item.date}}</b> - Start Clock: {{item.startClock}} - End Clock: {{item.endClock}} </a>
-            <a (click)="navigateToRun(item.id)" class="list-group-item list-group-item-action" *ngIf="item.endClock == ''">Date: <b>{{item.date}}</b> - Start Clock: {{item.startClock}} - End Clock: Running.... </a>
+            <a (click)="navigateToRun(item.id)" class="list-group-item list-group-item-action" *ngIf="item.endClock != null">Date: <b>{{item.date}}</b> - Start Clock: {{item.startClock}} - End Clock: {{item.endClock}} </a>
+            <a (click)="navigateToRun(item.id)" class="list-group-item list-group-item-action" *ngIf="item.endClock == null">Date: <b>{{item.date}}</b> - Start Clock: {{item.startClock}} - End Clock: Running.... </a>
           </span>
         </div>
       </div>

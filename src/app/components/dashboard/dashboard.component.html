@@ -2,27 +2,27 @@
     <div class="container text-center">
         <div class="row">
             <h2 style="margin-top: 20px;">Anomalies Chart</h2>
-            <h5 *ngIf="storico.endClock != ''">Date: {{storico.date}} - Start Clock: {{storico.startClock}} - End Clock: {{storico.endClock}}</h5>
-            <h5 *ngIf="storico.endClock == ''">Date: {{storico.date}} - Start Clock: {{storico.startClock}} - End Clock: Running... </h5>
-            <p>Description: {{storico.description}}</p>
+            <h5 *ngIf="storico.endClock != null">Date: {{storico.date}} - Start Clock: {{storico.startClock}} - End Clock: {{storico.endClock}}</h5>
+            <h5 *ngIf="storico.endClock == null">Date: {{storico.date}} - Start Clock: {{storico.startClock}} - End Clock: Running... </h5>
+            <p>{{storico.description}}</p>
         </div>
         <div class="row">
-            <div class="col-6" *ngIf="visibility.temperature > 0">
+            <div class="col-6" *ngIf="visibility.temperature != 0">
                 <canvas id="temperatureChart"></canvas>
             </div>
-            <div class="col-6" *ngIf="visibility.pressure > 0">
+            <div class="col-6" *ngIf="visibility.pressure != 0">
                 <canvas id="pressureChart" ></canvas>
             </div>
-            <div class="col-6" *ngIf="visibility.co2 > 0">
+            <div class="col-6" *ngIf="visibility.co2 != 0">
                 <canvas id="co2Chart"></canvas>
             </div>
-            <div class="col-6" *ngIf="visibility.humidity > 0">
+            <div class="col-6" *ngIf="visibility.humidity != 0">
                 <canvas id="humidityChart"></canvas>
             </div>
-            <div class="col-6" *ngIf="visibility.light > 0">
+            <div class="col-6" *ngIf="visibility.light != 0">
                 <canvas id="darknessChart"></canvas>
             </div>
-            <div class="col-6" *ngIf="visibility.horizontal > 0">
+            <div class="col-6" *ngIf="visibility.horizontal != 0">
                 <canvas id="horizontalChart"></canvas>
             </div>
         </div>
